@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sharma Johnson – Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500&display=swap">
+<style>
+:root{--bg:#e9eef2;--ink:#10243a;--muted:#4d6076;--blue:#2f4bff;--mint:#a8ecc8;--card:#f6f9fb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b2b;--ink:#e8eef5;--muted:#9db0c4;--blue:#7d90ff;--mint:#2c6b52;--card:#16273b}}
+:root[data-theme="dark"]{--bg:#0f1b2b;--ink:#e8eef5;--muted:#9db0c4;--blue:#7d90ff;--mint:#2c6b52;--card:#16273b}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 Figtree,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+h1,h2,h3{font-family:'Bricolage Grotesque',Impact,sans-serif;margin:0;line-height:.95}
+nav{display:flex;justify-content:space-between;padding:22px 5vw;position:relative;z-index:3;font-weight:500}
+nav a{text-decoration:none;margin-left:22px}
+nav a:hover{color:var(--blue)}
+.hero{position:relative;min-height:88vh;padding:6vh 5vw 8vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.shape{position:absolute;border-radius:50%;will-change:transform;transition:transform .25s ease-out}
+.s1{width:34vmin;height:34vmin;background:var(--mint);right:8vw;top:8vh}
+.s2{width:18vmin;height:18vmin;background:var(--blue);right:30vw;bottom:10vh;border-radius:30% 70% 60% 40%}
+.s3{width:9vmin;height:9vmin;border:4px solid var(--ink);right:6vw;bottom:14vh}
+.hero h1{font-size:clamp(3.4rem,13vw,11rem);font-weight:800;letter-spacing:-.03em;position:relative;z-index:2}
+.hero h1 span{display:inline-block;transform:translateY(110%) rotate(6deg);opacity:0;animation:up .9s cubic-bezier(.2,.9,.2,1) forwards;animation-delay:calc(var(--i)*55ms)}
+.hero h1 .row{display:block;overflow:hidden;padding-bottom:.08em}
+@keyframes up{to{transform:none;opacity:1}}
+.hero p{max-width:34ch;font-size:1.3rem;margin:28px 0 0;position:relative;z-index:2;opacity:0;animation:fade 1s .9s forwards}
+.btns{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:2;opacity:0;animation:fade 1s 1.1s forwards}
+@keyframes fade{to{opacity:1}}
+.btn{padding:14px 26px;border-radius:99px;text-decoration:none;font-weight:500;background:var(--ink);color:var(--bg);transition:transform .2s}
+.btn.alt{background:transparent;border:2px solid var(--ink);color:var(--ink)}
+.btn:hover{transform:translateY(-3px)}
+.marquee{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:16px 0;font:800 1.5rem 'Bricolage Grotesque',sans-serif}
+.marquee div{display:inline-block;animation:slide 26s linear infinite}
+.marquee span{margin:0 28px}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:12vh 5vw}
+h2{font-size:clamp(2.2rem,6vw,4.5rem);font-weight:800;letter-spacing:-.02em;margin-bottom:5vh}
+.work{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.work li{border-bottom:2px solid var(--ink)}
+.work button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;cursor:pointer;font:800 clamp(1.6rem,4vw,3rem)/1 'Bricolage Grotesque',sans-serif;transition:padding .3s,color .3s}
+.work button:hover{padding-left:2vw;color:var(--blue)}
+.work button:focus-visible{outline:3px solid var(--blue)}
+.plus{font-size:2rem;transition:transform .35s}
+.work li.open .plus{transform:rotate(45deg)}
+.body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.work li.open .body{grid-template-rows:1fr}
+.body>div{overflow:hidden}
+.body p{margin:0 0 12px;max-width:60ch;color:var(--muted)}
+.tags{display:flex;gap:10px;flex-wrap:wrap;padding-bottom:28px}
+.tags b{background:var(--mint);color:var(--ink);font-weight:500;border-radius:99px;padding:4px 14px;font-size:.9rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:6vw;background:var(--card)}
+.about p{margin:0 0 1em;max-width:52ch}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-content:start}
+.stats div{border:2px solid var(--ink);border-radius:20px;padding:22px}
+.stats strong{display:block;font:800 3rem/1 'Bricolage Grotesque',sans-serif;color:var(--blue)}
+.contact{text-align:center}
+.contact a.mail{font:800 clamp(1.6rem,6vw,4.5rem)/1 'Bricolage Grotesque',sans-serif;text-decoration:none;border-bottom:4px solid var(--blue);word-break:break-all}
+.contact a.mail:hover{color:var(--blue)}
+footer{padding:0 5vw 40px;color:var(--muted);text-align:center;font-size:.9rem}
+@media(max-width:760px){.about{grid-template-columns:1fr}.s1{right:-8vw}nav a{margin-left:14px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p,.btns{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><strong>Sharma Johnson</strong><div><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero" id="top">
+  <div class="shape s1" data-d="30"></div>
+  <div class="shape s2" data-d="-50"></div>
+  <div class="shape s3" data-d="70"></div>
+  <h1 aria-label="Your Name, designer and developer">
+    <span class="row" id="l1"></span>
+    <span class="row" id="l2"></span>
+  </h1>
+  <p>I design and build clean, fast digital products. Currently open to new roles.</p>
+  <div class="btns"><a class="btn" href="#work">See my work</a><a class="btn alt" href="#contact">Get in touch</a></div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="work">
+  <h2>Selected work</h2>
+  <ul class="work">
+    <li class="open"><button aria-expanded="true">Project One<span class="plus">+</span></button>
+      <div class="body"><div><p>Built an Email Marketing Automation platform to solve the manual effort involved in managing contact lists, creating campaigns, scheduling emails, and tracking delivery status using Python, Flask, PostgreSQL, and REST APIs.
+Automated campaign execution and tracking through scheduled email workflows, reducing repetitive manual campaign operations and improving overall campaign management efficiency.</p><div class="tags"><b>Python,React</b><b>SMPT</b><b>2023</b></div></div></div></li>
+    <li><button aria-expanded="false">Project Two<span class="plus">+</span></button>
+      <div class="body"><div><p>Automated IT service-management workflows across OTRS and ServiceNow to reduce manual ticket handling, including ticket creation, assignment, status updates, and workflow-based processing.
+Improved ticket-processing efficiency by automating repetitive support operations and providing more consistent handling of service requests and incidents.
+</p><div class="tags"><b>Python</b><b>PostgreSQL</b><b>2024-25</b></div></div></div></li>
+    <li><button aria-expanded="false">Project Three<span class="plus">+</span></button>
+      <div class="body"><div><p>Developed an HRMS application using **ASP.NET Core Web API, React.js, Entity Framework Core, and SQL Server**, covering **Employee Management, Employee Registration, Department Management, Leave Management, Attendance Tracking, and User/Role Management**.
+Implemented **JWT authentication and role-based authorization**, along with RESTful APIs and CRUD operations, to provide secure and controlled access to HR, admin, and employee functionalities.
+</p><div class="tags"><b>ASP.NET Core</b><b>React.js</b><b>2025-26</b></div></div></div></li>
+  </ul>
+</section>
+
+<section class="about" id="about">
+  <div><h2>About me</h2>
+    <p>I’m a Software Developer with experience building backend and full-stack applications using C#, .NET, ASP.NET Core, Web API, Entity Framework Core, Python, Flask, and SQL. I enjoy building practical automation solutions, REST APIs, and business applications that simplify repetitive processes and improve efficiency. I’m looking to join a collaborative engineering team where I can contribute to real-world products, learn from experienced developers, and continue growing as a full-stack developer.</p>
+    <p>I completed my Bachelor's degree in Computer Science ,Masters in Master of computer applications and have professional experience developing web applications, automation solutions, REST APIs, and ticketing workflows using Python, Flask, C#, and .NET technologies. I’m currently strengthening my skills in ASP.NET Core, Web API, Entity Framework Core, SQL Server, React.js, JWT authentication, and modern full-stack development while building practical projects to deepen my experience.
+</p></div>
+  <div class="stats">
+    <div><strong data-n="3">0</strong>Years of experience</div>
+    <div><strong data-n="12">0</strong>Projects shipped</div>
+    <div><strong data-n="5">0</strong>Happy clients</div>
+    <div><strong data-n="2">0</strong>Certifications</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let's work together</h2>
+  <a class="mail" href="mailto:johnsonsharma424@gmail.com">johnsonsharma424@gmail.com</a>
+</section>
+<footer>© 2026 Sharma Johnson</footer>
+
+<script>
+(function(){
+  // Hero name: edit the two words here
+  var words=['SHARMA'],i=0;
+  words.forEach(function(w,r){
+    var row=document.getElementById('l'+(r+1));
+    w.split('').forEach(function(c){var s=document.createElement('span');s.textContent=c;s.style.setProperty('--i',i++);s.setAttribute('aria-hidden','true');row.appendChild(s)});
+  });
+
+  // Skills marquee: edit the skills here
+  var skills=['Asp.net Core','Web Development','Frontend','Python','C#','Web API','SSMS','Problem solving'],h='';
+  for(var k=0;k<4;k++)skills.forEach(function(s){h+='<span>'+s+'</span>'});
+  document.getElementById('mq').innerHTML=h;
+  // Shapes follow the pointer
+
+  var shapes=document.querySelectorAll('.shape');
+  document.querySelector('.hero').addEventListener('pointermove',function(e){
+    var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+    shapes.forEach(function(s){var d=+s.dataset.d;s.style.transform='translate('+x*d+'px,'+y*d+'px)'});
+  });
+
+  // Project accordion
+  document.querySelectorAll('.work button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var li=b.parentNode,open=li.classList.toggle('open');
+      b.setAttribute('aria-expanded',open);
+    });
+  });
+  // Count-up stats when visible
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;io.unobserve(e.target);
+    var t=+e.target.dataset.n,n=0,id=setInterval(function(){n++;e.target.textContent=n;if(n>=t)clearInterval(id)},90);
+  })},{threshold:.6});
+  document.querySelectorAll('[data-n]').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
